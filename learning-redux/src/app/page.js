@@ -10,7 +10,6 @@ export default function Home() {
     <>
     <AddUser />
     <DisplayUser />
-    <h1>dsf</h1>
     </>
   );
 }
