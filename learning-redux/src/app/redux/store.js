@@ -1,7 +1,10 @@
-const { configureStore } = require("@reduxjs/toolkit");
-const reducer =require('./slice')
+import { configureStore } from '@reduxjs/toolkit';
+import userReducer from './slice'; // Adjust the import path if necessary
 
-export default configureStore({
-    // reducer: reducer,
-    reducer
-  })
+const store = configureStore({
+  reducer: {
+    users: userReducer, // Ensure this matches the state name used in the useSelector
+  },
+});
+
+export default store;
