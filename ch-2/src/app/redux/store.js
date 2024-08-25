@@ -1,5 +1,12 @@
-const {configureStore} = require("@reduxjs/toolkit");
+// store.js
+"use client";
 
-export default configureStore({
-    reducer:{}
-})
+import { configureStore } from "@reduxjs/toolkit";
+
+const store = configureStore({
+    reducer: {
+        // Add your reducers here
+    },
+});
+
+export default store;
