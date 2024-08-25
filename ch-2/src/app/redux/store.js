@@ -1,12 +1,7 @@
-// store.js
-"use client";
+"use client"
+const { configureStore } = require("@reduxjs/toolkit");
+const todoReducer =require('./feature/todo/todoSlice.js')
 
-import { configureStore } from "@reduxjs/toolkit";
-
-const store = configureStore({
-    reducer: {
-        // Add your reducers here
-    },
-});
-
-export default store;
+export default configureStore({
+    reducer:todoReducer
+  })
