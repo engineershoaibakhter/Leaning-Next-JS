@@ -1,12 +1,13 @@
-const { configureStore, nanoid } = require("@reduxjs/toolkit");
+
+const { createSlice, nanoid } = require("@reduxjs/toolkit");
 
 const initialState={
     todos:[{id:1,text:"Hello World"}],
 }
-const todoSlice=configureStore({
-    name:todo,
+const todoSlice=createSlice({
+    name:"todo",
     initialState,
-    reducer:{
+    reducers:{
         addTodo:(state,action)=>{
             const todo={
                 id:nanoid(),
