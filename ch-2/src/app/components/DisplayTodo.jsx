@@ -7,22 +7,26 @@ const DisplayTodo = () => {
     const dispatch = useDispatch();
     
     // Access the correct state property
-    const listOfTodo = useSelector(state => state.todos);
+    const  list  = useSelector(state => state.list);
+    console.log("list ",list);
     
     return (
         <div>
-            {listOfTodo && listOfTodo.length > 0 ? (
-                listOfTodo.map((todo) => (
-                    <li key={todo.id}>
-                        {todo.text} 
-                        <button onClick={() => dispatch(removeTodo(todo.id))}>Delete</button>
-                    </li>
-                ))
+            <h2>Todo List</h2>
+            {/* {listOfTodo && listOfTodo.length > 0 ? (
+                <ul>
+                    {listOfTodo.map((todo) => (
+                        <li key={todo.id}>
+                            {todo.text} 
+                            <button onClick={() => dispatch(removeTodo(todo.id))}>Delete</button>
+                        </li>
+                    ))}
+                </ul>
             ) : (
                 <p>No todos available</p>
-            )}
+            )} */}
         </div>
     );
 }
 
-export default DisplayTodo;
+export default DisplayTodo

@@ -1,7 +1,9 @@
 const { createSlice, nanoid } = require("@reduxjs/toolkit");
 
 const initialState = {
-    todos: [{ id: 1, text: "Hello World" }],
+    todo: {
+        list: [{ id: 1, text: "Hello World" }],
+    },
 };
 
 const todoSlice = createSlice({
@@ -13,11 +15,12 @@ const todoSlice = createSlice({
                 id: nanoid(),
                 text: action.payload,
             };
-            state.todos.push(todo);
+            state.todo.list.push(todo);
+            console.log("list ", JSON.stringify(state.todo.list, null, 2));
         },
         removeTodo: (state, action) => {
             // Corrected the filter method to properly update the state
-            state.todos = state.todos.filter((data) => data.id !== action.payload);
+            state.todo.list = state.todo.list.filter((data) => data.id !== action.payload);
         },
     },
 });
