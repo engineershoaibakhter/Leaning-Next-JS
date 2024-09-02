@@ -1,4 +1,4 @@
-import { deleteTodo } from "@/redux/todoSlice";
+import { deleteTodo, removeTodo } from "@/redux/todoSlice";
 import { State } from "@/type";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -65,10 +65,33 @@ const TodoList = () => {
             <div className="absolute top-1/2 left-1/2
             transform -translate-x-1/2 -translate-y-1/2
             px-8 py-4 bg-bodyColor shadow-todoShadow rounded-md">
-                <p>
-                    Are you sure to <span>remove</span>
+                <p className="text-base lg:text-xl
+                text-center font-medium text-red-500">
+                    Are you sure to <span
+                    className="font-semibold underline underline-offset-2
+                    decoration-[1px]">remove </span>
                     all the todos
                 </p>
+                <div className="flex items-center
+                justify-center gap-4 mt-4">
+                    <button 
+                    onClick={()=>setShowRemove(false)}
+                    className="
+                    px-6 py-2 text-base font-semibold bg-transparent border-[1px]
+                    border-gray-500 hover:border-red-500 duration-300 rounded-md text-black">No</button>
+                    <button 
+                    onClick={()=>{
+                        dispatch(
+                            removeTodo(),
+                            toast.success("All Todos Removed Successfully!"),
+                            setShowRemove(false)
+                        )
+                    }}
+                    className="
+                    px-6 py-2 text-base font-semibold bg-transparent border-[1px]
+                    border-gray-500 hover:border-red-500 duration-300 rounded-md text-black">Yes</button>
+
+                </div>
             </div>
 
         </div>)
