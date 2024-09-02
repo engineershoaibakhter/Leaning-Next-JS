@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { MdClose } from "react-icons/md";
 import { useDispatch } from "react-redux";
+import TodoList from "./TodoList";
 
 const InputForm = () => {
   const dispatch=useDispatch();
@@ -50,6 +51,7 @@ const InputForm = () => {
         hover:text-orange-600 uppercase duration-200
         text-sm md:text-base">Add todo</button>
       </form>
+      <TodoList />
       {/* TodoList */}
     </div>
   );
