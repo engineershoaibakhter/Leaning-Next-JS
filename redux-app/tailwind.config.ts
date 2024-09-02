@@ -11,6 +11,9 @@ const config: Config = {
       color:{
         bodyColor:"#030D25",
       },
+      boxShadow:{
+        todoShadow:"0px 0px 20px 4px rgba(11,4,209,1)"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
