@@ -6,9 +6,7 @@ interface TodoState{
 }
 
 const initialState:TodoState={
-todoList:[
-    // {_id:1,todo:"todo1"}
-],
+todoList:[],
 }
 
 export const todoSlice=createSlice({
@@ -19,7 +17,6 @@ export const todoSlice=createSlice({
             state.todoList.push(action.payload);
         },
         deleteTodo:(state,action:PayloadAction<string>)=>{
-            alert(action.payload)
             state.todoList=state.todoList.filter((item)=>item._id !== action.payload)
         },
         removeTodo:(state)=>{
